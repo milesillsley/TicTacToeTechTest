@@ -6,7 +6,7 @@
     var game;
 
     beforeEach(function() {
-      game = new TicTacToe();
+      game = new TicTacToe(3);
     });
 
     describe('the first turn',function() {
