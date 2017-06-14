@@ -5,8 +5,12 @@ var TicTacToe = function(gameSize) {
   this._currentPlayer = 'X';
 };
 TicTacToe.prototype.move = function(x,y) {
- this._grid[x][y] = this.getCurrentPlayer();
- this.endTurn();
+  if (this._grid[x][y] === '') {
+    this._grid[x][y] = this.getCurrentPlayer();
+    this.endTurn();
+  } else {
+    throw 'Field already occupied, please choose another';
+  }
 };
 TicTacToe.prototype.getPos = function(x,y) {
   return this._grid[x][y];

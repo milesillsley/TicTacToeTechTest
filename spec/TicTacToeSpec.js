@@ -24,6 +24,9 @@
         game.move(1,0);
         expect(game.getPos(1,0)).toBe('O');
       });
+      it('a player cannot claim a field held that is already ocuupied', function() {
+        expect(function() { game.move(0,0); }).toThrow('Field already occupied, please choose another');
+      });
     });
   });
 }());
